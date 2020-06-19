@@ -1,0 +1,19 @@
+<h1 id="tableLabel">The loai</h1>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="lstTheloai">
+    <thead>
+      <tr>
+        <th>Ma Tl</th>
+        <th>Sach (C)</th>
+        <th>Ten Tl (F)</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let theloai of lstTheloai">
+        <td>{{ theloai.maTl }}</td>
+        <td>{{ theloai.sach }}</td>
+        <td>{{ theloai.tenTl }}</td>
+        
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,56 @@
+<p>tacgia works!</p>
+<h1 id="tableLabel">tacgia</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!tacgia"><em>Loading...</em></p>
+<button class ="btn btn-primary" (click)="openModal(true,null)">Add tacgia1</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tacgia.totalRecord>0">
+  <thead>
+    <tr>
+      <th>Ma Tac Gia</th>
+      <th>Ten Tac Gia (C)</th>
+      
+      <th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of sach.data">
+      <td>{{ s.maTg }}</td>
+      <td>{{ s.tenTg }}</td>
+      
+      <td>
+        <button class ="btn btn-info btm-sm" (click)="openModal(false,p)">Edit</button>
+        <button class ="btn btn-danger btm-sm" (click)="deleteTacgia(p)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+    <li class="page-item">
+        <a href="javascript:void(0);" (click)="searchPrevious()">Truoc</a>
+    </li>
+    <li class="page-item">{{sach.page}}</li>
+    <li class="page-item">
+        <a href="javascript:void(0);" (click)="searchNext()">Sau</a>
+    </li>
+</ul>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new TacGia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >Save</button>
+        <button type="button" class="btn btn-success">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
